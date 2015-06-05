@@ -4,24 +4,28 @@ var request = require('request')
   ,    link = "https://cube.api.aero/atibeacon/beacons/1?airportCode=AMS&app_id="+app_id+"&app_key="+app_key+"&preservePendingNewBeacons=true"
 
 
-var options = {
-     url     : link
-  ,  method  : 'GET'
-  ,  headers : {
-    'User-Agent': 'request'
+if(process.argv[2] == "list") {
+
+  var options = {
+       url     : link
+    ,  method  : 'GET'
+    ,  headers : {
+      'User-Agent': 'request'
+    }
   }
-}
 
-
-function callback(error, response, body){
-  if (!error && response.statusCode == 200) {
-    jsonData = JSON.parse(body)
-    console.log(jsonData)
+  function callback(error, response, body){
+    if (!error && response.statusCode == 200) {
+      jsonData = JSON.parse(body)
+      console.log(jsonData)
+    }
   }
+
+  request(options, callback)
+} else {
+  console.log("Pass npm test [arguments]")
+  console.log("Possible arguments : list")
 }
-
-
-request(options, callback)
 
 
 
