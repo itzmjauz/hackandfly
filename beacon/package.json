@@ -1,10 +1,10 @@
 {
-  "name": "beacon",
+  "name": "beacons",
   "version": "1.0.0",
   "description": "Query usefull information from the ibeacon API",
   "main": "beacons.js",
   "scripts": {
-    "test": "node beacon.js"
+    "test": "node beacons.js"
   },
   "author": "itzmjauz",
   "license": "ISC",
