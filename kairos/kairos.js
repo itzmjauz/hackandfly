@@ -40,7 +40,7 @@ function enroll(img, id){
     , postjson= {
          "image"        : img.toString('base64')
       ,  "selector"     : "SETPOSE"
-      ,  "gallery_name" : "gallery1"
+      ,  "gallery_name" : "gallery2"
       ,  "symmetricFill": "true"
       ,  "subject_id"   : id
     }
@@ -88,7 +88,7 @@ function recognize(img){
   var link    = "https://api.kairos.com/recognize"
     , postjson= {
          "image"        : img.toString('base64')
-      ,  "gallery_name" : "gallery1"
+      ,  "gallery_name" : "gallery2"
     }
 
 
