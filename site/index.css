@@ -35,7 +35,6 @@
     right     : 0%;
     top       : 70%;
     bottom    : 0%;
-    font: 14px/1.4 'helvetica neue',helvetica,arial,sans-serif;
-    color: #434343;
-    content   : "test"
+    font      : 24px/1.4 'helvetica neue',helvetica,arial,sans-serif;
+    color     : white
 }
