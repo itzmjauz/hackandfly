@@ -15,6 +15,12 @@ if(process.argv[3] == null ) {
   var img = fs.readFile(process.argv[3], function(err, data) {
     detect(data)
   })
+} else if(process.argv[2] == "r"){
+  if(process.argv[4] == null) {
+    console.log("argv[4] needed")
+  } else {
+    reset(data, process.argv[4])
+  }
 } else if(process.argv[2] == "e") {
   var img = fs.readFile(process.argv[3], function(err, data) {
     if(process.argv[4] == null){
@@ -91,8 +97,28 @@ function recognize(img){
       ,  "gallery_name" : "gallery2"
     }
 
+   options = {
+     url     : link
+  ,  body    : JSON.stringify(postjson)
+  ,  method  : 'POST'
+  ,  headers : {
+     'Content-Type' : 'application/json'
+  ,  'app_id'    : app_id
+  ,  'app_key'   : app_key
+  ,  'User-Agent': 'request'
+    }
+  }
 
-  options = {
+  request(options, callback)
+}
+
+function reset(img, gallery_id){
+  var link    = "https://api.kairos.com/recognize"
+    , postjson= {
+      "gallery_name" : gallery_id
+    }
+
+   options = {
      url     : link
   ,  body    : JSON.stringify(postjson)
   ,  method  : 'POST'
