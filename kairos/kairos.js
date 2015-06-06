@@ -9,7 +9,11 @@ if(process.argv[3] == null ) {
   "not enough arguments , cmd = npm test [r/d/e] [file]"
 } else if(process.argv[2] == "r") {
   var img = fs.readFile(process.argv[3], function(err, data) {
-    recognize(data)
+    if(process.argv[4]) == null {
+      console.log("provide a gallery id")
+    } else {
+      recognize(data, process.argv[4])
+    }
   })
 } else if(process.argv[2] == "d") {
   var img = fs.readFile(process.argv[3], function(err, data) {
@@ -90,11 +94,11 @@ function detect(img){
   request(options, callback)
 }
 
-function recognize(img){
+function recognize(img, gid){
   var link    = "https://api.kairos.com/recognize"
     , postjson= {
          "image"        : img.toString('base64')
-      ,  "gallery_name" : "gallery2"
+      ,  "gallery_name" : gid
     }
 
    options = {
