@@ -9,7 +9,7 @@ if(process.argv[3] == null ) {
   "not enough arguments , cmd = npm test [r/d/e] [file]"
 } else if(process.argv[2] == "r") {
   var img = fs.readFile(process.argv[3], function(err, data) {
-    if(process.argv[4]) == null {
+    if(process.argv[4] == null) {
       console.log("provide a gallery id")
     } else {
       recognize(data, process.argv[4])
