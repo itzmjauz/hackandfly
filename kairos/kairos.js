@@ -23,10 +23,10 @@ if(process.argv[3] == null ) {
   }
 } else if(process.argv[2] == "e") {
   var img = fs.readFile(process.argv[3], function(err, data) {
-    if(process.argv[4] == null){
-      console.log("no subject id given (arg[4])")
+    if(process.argv[5] == null){
+      console.log("no subject id given (arg[5])")
     } else {
-      enroll(data, process.argv[4])
+      enroll(data, process.argv[4], process.argv[5])
     }
   })
 } else {
@@ -41,12 +41,12 @@ function callback(error, response, body){
 }
 
 
-function enroll(img, id){
+function enroll(img, id, gid){
   var link    = "https://api.kairos.com/enroll"
     , postjson= {
          "image"        : img.toString('base64')
       ,  "selector"     : "SETPOSE"
-      ,  "gallery_name" : "gallery2"
+      ,  "gallery_name" : gid
       ,  "symmetricFill": "true"
       ,  "subject_id"   : id
     }
