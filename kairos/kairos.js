@@ -113,7 +113,7 @@ function recognize(img){
 }
 
 function reset(gallery_id){
-  var link    = "https://api.kairos.com/recognize"
+  var link    = "https://api.kairos.com/remove"
     , postjson= {
       "gallery_name" : gallery_id
     }
