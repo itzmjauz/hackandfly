@@ -1,0 +1,41 @@
+#map {
+    margin    : 5px;
+    background: url(1.jpg) no-repeat center;
+    position  : fixed;
+    left      : 0%;
+    right     : 60%;
+    top       : 0%;
+    bottom    : 40%;
+}
+#aud {
+    margin    : 5px;
+    background: url(2.jpg) no-repeat center;
+    position  : fixed;
+    left      : 0%;
+    right     : 60%;
+    top       : 60%;
+    bottom    : 0%;
+}
+#sug {
+    margin    : 5px;
+    background: url(3.jpg) no-repeat center;
+    text-align: center;
+    position  : fixed;
+    left      : 40%;
+    right     : 0%;
+    top       : 0%;
+    bottom    : 30%;
+}
+#dem {
+    margin    : 5px;
+    background-color : #3b8bba;
+    text-align: center;
+    position  : fixed;
+    left      : 40%;
+    right     : 0%;
+    top       : 70%;
+    bottom    : 0%;
+    font: 14px/1.4 'helvetica neue',helvetica,arial,sans-serif;
+    color: #434343;
+    content   : "test"
+}
