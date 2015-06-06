@@ -1,5 +1,7 @@
 var request = require('request')
   , fs      = require('fs')
+  , app_id  = "4985f625"
+  , app_key = "4423301b832793e217d04bc44eb041d3"
 
 // we gotta load the image before specifiying our post data
 
@@ -25,10 +27,16 @@ if(process.argv[3] == null ) {
   console.log("no valid argument r/d/e [filename]")
 }
 
+// we can predefine our callback for every request
+function callback(error, response, body){
+  if (!error && response.statusCode == 200) {
+    console.log(JSON.stringify(JSON.parse(body), null, 4))
+  }
+}
+
+
 function enroll(img, id){
-  var app_id  = "4985f625"
-    , app_key = "4423301b832793e217d04bc44eb041d3"
-    , link    = "https://api.kairos.com/enroll"
+  var link    = "https://api.kairos.com/enroll"
     , postjson= {
          "image"        : img.toString('base64')
       ,  "selector"     : "SETPOSE"
@@ -47,12 +55,6 @@ function enroll(img, id){
   ,  'app_id'    : app_id
   ,  'app_key'   : app_key
   ,  'User-Agent': 'request'
-  }
-  }
-
-  function callback(error, response, body){
-    if (!error && response.statusCode == 200) {
-      console.log(JSON.stringify(JSON.parse(body), null, 4))
     }
   }
 
@@ -60,9 +62,7 @@ function enroll(img, id){
 }
 
 function detect(img){
-  var app_id  = "4985f625"
-    , app_key = "4423301b832793e217d04bc44eb041d3"
-    , link    = "https://api.kairos.com/detect"
+  var link    = "https://api.kairos.com/detect"
     , postjson= {
          "image"        : img.toString('base64')
       ,  "selector"     : "SETPOSE"
@@ -78,12 +78,6 @@ function detect(img){
   ,  'app_id'    : app_id
   ,  'app_key'   : app_key
   ,  'User-Agent': 'request'
-  }
-  }
-
-  function callback(error, response, body){
-    if (!error && response.statusCode == 200) {
-      console.log(JSON.stringify(JSON.parse(body), null, 4))
     }
   }
 
@@ -91,9 +85,7 @@ function detect(img){
 }
 
 function recognize(img){
-  var app_id  = "4985f625"
-    , app_key = "4423301b832793e217d04bc44eb041d3"
-    , link    = "https://api.kairos.com/recognize"
+  var link    = "https://api.kairos.com/recognize"
     , postjson= {
          "image"        : img.toString('base64')
       ,  "gallery_name" : "gallery1"
@@ -109,12 +101,6 @@ function recognize(img){
   ,  'app_id'    : app_id
   ,  'app_key'   : app_key
   ,  'User-Agent': 'request'
-  }
-  }
-
-  function callback(error, response, body){
-    if (!error && response.statusCode == 200) {
-      console.log(JSON.stringify(JSON.parse(body), null, 4))
     }
   }
 
