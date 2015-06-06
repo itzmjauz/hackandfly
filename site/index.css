@@ -1,5 +1,6 @@
 #map {
     margin    : 5px;
+    background: url(1.jpg) no-repeat center;
     position  : fixed;
     left      : 0%;
     right     : 60%;
@@ -8,6 +9,7 @@
 }
 #aud {
     margin    : 5px;
+    background: url(2.jpg) no-repeat center;
     position  : fixed;
     left      : 0%;
     right     : 60%;
@@ -16,6 +18,7 @@
 }
 #sug {
     margin    : 5px;
+    background: url(3.jpg) no-repeat center;
     text-align: center;
     position  : fixed;
     left      : 40%;
@@ -35,8 +38,4 @@
     font      : 24px/1.4 'helvetica neue',helvetica,arial,sans-serif;
     color     : white
 }
-div img {
-   display: block;
-   max-width:100%;
-   max-height:100%;
-}
+
