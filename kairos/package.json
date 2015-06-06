@@ -1,0 +1,14 @@
+{
+  "name": "kairos",
+  "version": "1.0.0",
+  "description": "kairos interaction",
+  "main": "kairos.js",
+  "scripts": {
+    "test": "node kairos.js"
+  },
+  "author": "itzmjauz",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.57.0"
+  }
+}

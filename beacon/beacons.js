@@ -23,8 +23,8 @@ if(process.argv[2] == "list") {
 
   request(options, callback)
 
-} else if(process.argv[2] == "status") { 
-  if(process.argv.length < 4) { 
+} else if(process.argv[2] == "status") {
+  if(process.argv.length < 4) {
     console.log("more arguments")
 
   }
@@ -50,6 +50,3 @@ if(process.argv[2] == "list") {
   console.log("Pass npm test [arguments]")
   console.log("Possible arguments : list")
 }
-
-
-
