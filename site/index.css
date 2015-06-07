@@ -8,9 +8,10 @@
 }
 
 #map iframe {
-    position  : relative;
-    width     : 100%;
-    height    : 100%;
+    position  : fixed;
+    min-width     : 100%;
+    min-height    : 100%;
+    overflow : hidden;
 }
 
 #aud {
@@ -43,5 +44,9 @@
     bottom    : 0%;
     font      : 24px/1.4 'helvetica neue',helvetica,arial,sans-serif;
     color     : white
+}
+img {
+  width : 100%;
+  height : 100%;
 }
 
